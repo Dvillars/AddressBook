@@ -2,14 +2,15 @@
   Layout="Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-  <h1>Adress-Book</h1>
-</div>
+<h1>Here are the available jobs:</h1>
 
-<div class="row">
-
-  <div class="">
-    Hello
+@foreach(var job in @Model)
+{
+  <div class="well">
+    @job.GetName()
+    <br>
+    @job.GetPhoneNumber()
+    <br>
+    @job.GetAddress()
   </div>
-
-</div>
+}

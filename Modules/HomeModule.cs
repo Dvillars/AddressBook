@@ -1,5 +1,6 @@
 using Nancy;
 using System.Collections.Generic;
+using System.IO;
 using AdressBook.Objects;
 
 namespace AdressBook
@@ -10,13 +11,13 @@ namespace AdressBook
         {
           Get["/"] = _ =>
           {
-              if (Job.GetCounter() == 0)
+              if (Contact.GetCounter() == 0)
               {
                 return View["none.cshtml"];
               }
               else
               {
-                return View["index.cshtml", Job.JobList()];
+                return View["index.cshtml", Contact.ContactList()];
               }
           };
 
@@ -27,7 +28,7 @@ namespace AdressBook
 
           Post["/contacts/new"] = _ =>
           {
-            Job newJob = new Job(Request.Form["job-name"], Request.Form["job-description"], Request.Form["job-contact"]);
+            Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-phone-number"], Request.Form["contact-address"]);
             return View["new.cshtml"];
           };
 

@@ -7,7 +7,7 @@ namespace AdressBook.Objects
         private string _name;
         private string _phoneNumber;
         private string _address;
-        private static List<Contact> Contactlist = new List<Contact> {};
+        private static List<Contact> _instances = new List<Contact> {};
         private static int _counter = 0;
 
         public Contact(string Name, string PhoneNumber, string Address)
