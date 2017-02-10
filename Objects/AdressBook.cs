@@ -13,11 +13,11 @@ namespace AdressBook.Objects
 
         public Contact(string Name, string PhoneNumber, string Address)
         {
-          SetName(Name);
-          SetPhoneNumber(PhoneNumber);
-          SetAddress(Address);
-          _instances.Add(this);
-          SetCounter();
+            SetName(Name);
+            SetPhoneNumber(PhoneNumber);
+            SetAddress(Address);
+            _instances.Add(this);
+            SetCounter();
         }
 
         public string GetName()
@@ -75,5 +75,10 @@ namespace AdressBook.Objects
         {
             _instances.RemoveAt(input);
         }
+        public static void ClearAll()
+        {
+            _instances.Clear();
+        }
+
     }
 }

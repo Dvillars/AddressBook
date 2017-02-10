@@ -36,13 +36,12 @@ namespace AdressBook
           {
               int contactIndex = int.Parse(Request.Form["delete-button"]);
               Contact.DeleteContact(contactIndex);
-
-              List<Contact> contactList = Contact.ContactList();
-              return View["clear.cshtml", contactList];
+              return View["clear.cshtml"];
           };
 
-          Get["/contacts-clear-all"] = _ =>
+          Post["/contacts-clear-all"] = _ =>
           {
+              Contact.ClearAll();
               return View["clearall.cshtml"];
           };
         }
