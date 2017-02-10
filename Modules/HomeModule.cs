@@ -12,6 +12,18 @@ namespace AdressBook
       {
         return View["index.cshtml"];
       };
+      Get["/contacts/view"] = _ =>
+      {
+        return View["index.cshtml"];
+      };
+      Get["/contacts/new"] = _ =>
+      {
+        return View["index.cshtml"];
+      };
+      Get["/contacts/clear"] = _ =>
+      {
+        return View["index.cshtml"];
+      };
     }
   }
 }
