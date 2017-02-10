@@ -2,15 +2,18 @@
   Layout="Shared/_Layout.cshtml";
 }
 
-<h1>Here are the available jobs:</h1>
+<h1>Here are the available contacts:</h1>
 
-@foreach(var job in @Model)
+@foreach(var Contact in @Model)
 {
-  <div class="well">
-    @job.GetName()
-    <br>
-    @job.GetPhoneNumber()
-    <br>
-    @job.GetAddress()
-  </div>
+    <div class="well">
+        <div class="form-group">
+        <p>Model: @Contact.GetName() </p>
+        <p>Mileage: @Contact.GetPhoneNumber() </p>
+        <p>Interior Color: @Contact.GetAddress() </p>
+        <form action="contacts-clear" method="post">
+            <button name="delete-button" type="submit" value=@Contact.GetId()>Delete!</button>
+        </form>
+        </div>
+    </div>
 }

@@ -13,28 +13,37 @@ namespace AdressBook
           {
               if (Contact.GetCounter() == 0)
               {
-                return View["none.cshtml"];
+                  return View["none.cshtml"];
               }
               else
               {
-                return View["index.cshtml", Contact.ContactList()];
+                  return View["index.cshtml", Contact.ContactList()];
               }
           };
 
-          Get["/contacts/view/{id}"] = parameters =>
+          Get["/contacts-view/{id}"] = parameters =>
           {
               return View["view.cshtml"];
           };
 
-          Post["/contacts/new"] = _ =>
+          Post["/contacts-new"] = _ =>
           {
-            Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-phone-number"], Request.Form["contact-address"]);
-            return View["new.cshtml"];
+              Contact newContact = new Contact(Request.Form["contact-name"], Request.Form["contact-phone-number"], Request.Form["contact-address"]);
+              return View["new.cshtml"];
           };
 
-          Get["/contacts/clear"] = _ =>
+          Post["/contacts-clear"] = _ =>
           {
-              return View["clear.cshtml"];
+              int contactIndex = int.Parse(Request.Form["delete-button"]);
+              Contact.DeleteContact(contactIndex);
+
+              List<Contact> contactList = Contact.ContactList();
+              return View["clear.cshtml", contactList];
+          };
+
+          Get["/contacts-clear-all"] = _ =>
+          {
+              return View["clearall.cshtml"];
           };
         }
     }
