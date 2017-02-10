@@ -23,7 +23,8 @@ namespace AdressBook
 
           Get["/contacts-view/{id}"] = parameters =>
           {
-              return View["view.cshtml"];
+              Contact idContact = Contact.Find(parameters.id);
+              return View["view.cshtml", idContact];
           };
 
           Post["/contacts-new"] = _ =>

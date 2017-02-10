@@ -6,21 +6,21 @@
 
 @foreach(var Contact in @Model)
 {
-    <div class="well">
-        <div class="form-group">
-        <p>Model: @Contact.GetName() </p>
-        <p>Mileage: @Contact.GetPhoneNumber() </p>
-        <p>Interior Color: @Contact.GetAddress() </p>
-        <form action="/contacts-view/{id}" method="post">
-            <button name="view-button" type="submit" value=@Contact.GetId()>View!</button>
-        </form>
-        <form action="contacts-clear" method="post">
-            <button name="delete-button" type="submit" value=@Contact.GetId()>Delete!</button>
-        </form>
-        </div>
+  <div class="well">
+    <div class="form-group">
+    <p>Name: @Contact.GetName() </p>
+    <p>PhoneNumber: @Contact.GetPhoneNumber() </p>
+    <p>Address: @Contact.GetAddress() </p>
+    <form action="/contacts-view/@Contact.GetId()" method="post">
+      <button name="view-button" type="submit" value=@Contact.GetId()>View!</button>
+    </form>
+    <form action="contacts-clear" method="post">
+      <button name="delete-button" type="submit" value=@Contact.GetId()>Delete!</button>
+    </form>
     </div>
+  </div>
 }
 
 <form action="contacts-clear-all" method="post">
-    <button name="delete-button" type="submit" value="all">Delete All!</button>
+  <button name="delete-button" type="submit" value="all">Delete All!</button>
 </form>
