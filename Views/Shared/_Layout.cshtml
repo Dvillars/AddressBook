@@ -7,7 +7,18 @@
   </head>
   <body>
     <div class="container">
-      @RenderBody()
+      <div class="jumbotron">
+        <h1>Adress-Book!</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-4 left">
+          @Html.Partial("Shared/nav.cshtml")
+        </div>
+        <div class="col-md-8 right">
+          @RenderBody()
+        </div>
+      </div>
+
     </div>
   </body>
 </html>
