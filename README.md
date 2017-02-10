@@ -2,14 +2,14 @@
 #### _**By: Derek Villars**_
 
 ### _Link to Site: (using github pages)_
-if you wish to view this site [->Click Here<-](https://DVillars.github.io/pizza) it should open right away.
+if you wish to view this site [->Click Here<-](https://DVillars.github.io/AdressBook) it should open right away.
 
 ### _Setup/Installation Requirements:_
  After Cloning this repository to your computer you need to open the index.html file and the website should open up in your browser.
 
 ### _Specifications:_
   At the homepage of the app (at the root path localhost:5004) it lists all Contacts, and allow users to click a Contact's name to go their page and view its details.
-  
+
   The homepage should link to a page presenting the user with a form they can fill out to create a new Contact.
 
   After the form is submitted, the new Contact will be saved and then sent to a page at the URL /contact/new. This page says "You created a contact!" and it shows the full Contact info. it has a link back to the homepage and the new one they just made should be there as well.
