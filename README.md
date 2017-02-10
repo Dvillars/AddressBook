@@ -8,13 +8,13 @@ if you wish to view this site [->Click Here<-](https://DVillars.github.io/pizza)
  After Cloning this repository to your computer you need to open the index.html file and the website should open up in your browser.
 
 ### _Specifications:_
-  Create a Contact class. This class should include properties for the person's name, phone number and address.
-
-  The homepage of the app at the root path (localhost:5004) should list all Contacts, and allow users to click a Contact's name to go to a separate page to view its details.
+  At the homepage of the app (at the root path localhost:5004) it lists all Contacts, and allow users to click a Contact's name to go their page and view its details.
   
-  The homepage should also contain a link to a page presenting the user with a form they can fill out to create a new Contact. After the form is submitted, the new Contact object should be saved into a static List and the user should be taken to a different page at the URL /contact/new. This page should tell them "You created a contact!" and display the name, phone number, and address of that new contact. It should also have a link back to the homepage with the list of all saved contacts, including the new one they just made.
+  The homepage should link to a page presenting the user with a form they can fill out to create a new Contact.
 
-  The homepage should also contain a form with only a clear button at the bottom of the list of all contacts. When this is pressed, all Contacts should be deleted, and the user should be taken to a confirmation page at /contacts/clear. On this page they should be shown a confirmation message saying "Address book cleared!". There should also be a link back to the home page at the root path.
+  After the form is submitted, the new Contact will be saved and then sent to a page at the URL /contact/new. This page says "You created a contact!" and it shows the full Contact info. it has a link back to the homepage and the new one they just made should be there as well.
+
+  The homepage also contains a clear button at the bottom of the list that clears all of the contacts and taken to a confirmation page at /contacts/clear that says "Address book cleared!". There is also a link back to the home page at the root path.
 
 ### _Known Bugs:_
 
