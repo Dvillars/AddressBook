@@ -80,5 +80,9 @@ namespace AdressBook.Objects
             _instances.Clear();
         }
 
+        public static Contact Find(int Id)
+        {
+            return _instances[Id];
+        }
     }
 }

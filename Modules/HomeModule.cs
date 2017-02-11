@@ -23,8 +23,8 @@ namespace AdressBook
 
           Get["/contacts-view/{id}"] = parameters =>
           {
-              Contact idContact = Contact.Find(parameters.id);
-              return View["view.cshtml", idContact];
+              Contact newContact = Contact.Find(parameters.id);
+              return View["view.cshtml", newContact];
           };
 
           Post["/contacts-new"] = _ =>
@@ -37,7 +37,9 @@ namespace AdressBook
           {
               int contactIndex = int.Parse(Request.Form["delete-button"]);
               Contact.DeleteContact(contactIndex);
-              return View["clear.cshtml"];
+
+              List<Contact> newList = Contact.ContactList();
+              return View["clear.cshtml", newList];
           };
 
           Post["/contacts-clear-all"] = _ =>

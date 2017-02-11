@@ -11,8 +11,8 @@
     <p>Name: @Contact.GetName() </p>
     <p>PhoneNumber: @Contact.GetPhoneNumber() </p>
     <p>Address: @Contact.GetAddress() </p>
-    <form action="/contacts-view/@Contact.GetId()" method="post">
-      <button name="view-button" type="submit" value=@Contact.GetId()>View!</button>
+    <form action="/contacts-view/@Contact.GetId()" method="get">
+      <button name="view-button" class="btn" type="submit">View! (dosn't work needs a fix)</button>
     </form>
     <form action="contacts-clear" method="post">
       <button name="delete-button" type="submit" value=@Contact.GetId()>Delete!</button>
@@ -22,5 +22,5 @@
 }
 
 <form action="contacts-clear-all" method="post">
-  <button name="delete-button" type="submit" value="all">Delete All!</button>
+  <button name="delete-button" class="btn" type="submit" value="all">Delete All!</button>
 </form>

@@ -3,7 +3,10 @@ Layout="Shared/_Layout.cshtml";
 }
 
 <div class="form-group">
-  <p>Name: @Contact.GetName() </p>
-  <p>PhoneNumber: @Contact.GetPhoneNumber() </p>
-  <p>Address: @Contact.GetAddress() </p>
+  <p>Name: Contact.GetName() </p>
+  <p>PhoneNumber: Contact.GetPhoneNumber() </p>
+  <p>Address: Contact.GetAddress() </p>
+  <form action="/" method="get">
+    <button class="btn" type="submit">Okay! Take me back!</button>
+  </form>
 </div>
