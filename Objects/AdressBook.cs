@@ -16,35 +16,35 @@ namespace AdressBook.Objects
             SetName(Name);
             SetPhoneNumber(PhoneNumber);
             SetAddress(Address);
-            _instances.Add(this);
             SetCounter();
+            _instances.Add(this);
         }
 
+        public void SetName(string newName)
+        {
+          _name = newName;
+        }
         public string GetName()
         {
             return _name;
         }
-        public void SetName(string newName)
-        {
-            _name = newName;
-        }
 
+        public void SetPhoneNumber(string newPhoneNumber)
+        {
+          _phoneNumber = newPhoneNumber;
+        }
         public string GetPhoneNumber()
         {
             return _phoneNumber;
         }
-        public void SetPhoneNumber(string newPhoneNumber)
-        {
-            _phoneNumber = newPhoneNumber;
-        }
 
+        public void SetAddress(string newAddress)
+        {
+          _address = newAddress;
+        }
         public string GetAddress()
         {
             return _address;
-        }
-        public void SetAddress(string newAddress)
-        {
-            _address = newAddress;
         }
 
         public static List<Contact> ContactList()
@@ -53,22 +53,22 @@ namespace AdressBook.Objects
             return _instances;
         }
 
+        public void SetCounter()
+        {
+          _counter++;
+        }
         public static int GetCounter()
         {
             return _counter;
         }
-        public void SetCounter()
-        {
-            _counter++;
-        }
 
+        public void SetId()
+        {
+          _id = _counter;
+        }
         public int GetId()
         {
             return _id;
-        }
-        public void SetId()
-        {
-            _id = _counter;
         }
 
         public static void DeleteContact(int input)
