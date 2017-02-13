@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace AdressBook.Objects
+namespace AddressBook.Objects
 {
     public class Contact
     {
@@ -17,6 +17,7 @@ namespace AdressBook.Objects
             SetPhoneNumber(PhoneNumber);
             SetAddress(Address);
             SetCounter();
+            SetId();
             _instances.Add(this);
         }
 
@@ -73,7 +74,8 @@ namespace AdressBook.Objects
 
         public static void DeleteContact(int input)
         {
-            _instances.RemoveAt(input);
+            _instances.RemoveAt(input-1);
+            ResetAllIds();
         }
         public static void ClearAll()
         {
@@ -82,7 +84,18 @@ namespace AdressBook.Objects
 
         public static Contact Find(int Id)
         {
-            return _instances[Id];
+            ResetAllIds();
+            return _instances[Id-1];
+        }
+        public static void ResetAllIds()
+        {
+            _instances.TrimExcess();
+            _counter = 1;
+            foreach(Contact contact in _instances)
+            {
+                contact.SetId();
+                _counter++;
+            }
         }
     }
 }

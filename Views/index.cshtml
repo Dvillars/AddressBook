@@ -7,15 +7,13 @@
 @foreach(var Contact in @Model)
 {
   <div class="well">
-    <div class="form-group">
+    <div class="">
     <p>Name: @Contact.GetName() </p>
-    <p>PhoneNumber: @Contact.GetPhoneNumber() </p>
-    <p>Address: @Contact.GetAddress() </p>
     <form action="/contacts-view/@Contact.GetId()" method="get">
-      <button name="view-button" class="btn" type="submit">View! (dosn't work needs a fix)</button>
+      <button name="view-button" class="btn" type="submit">View!</button>
     </form>
     <form action="contacts-clear" method="post">
-      <button name="delete-button" class="btn" type="submit" value=@Contact.GetId()>Delete! (dosn't work needs the same fix)</button>
+      <button name="delete-button" class="btn" type="submit" value=@Contact.GetId()>Delete!</button>
     </form>
     </div>
   </div>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using AdressBook.Objects;
 
-namespace AdressBook
+namespace AddressBook
 {
     public class HomeModule : NancyModule
     {
